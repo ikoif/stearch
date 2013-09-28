@@ -1,5 +1,4 @@
-
-function searchTable(inputid, displaymode, classname){
+function stearch(inputid, displaymode, classname){
 	inputid = "#"+inputid;
 	query = $('#search_text').val();
 	query = query.toLowerCase();
