@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+    <script src="stearch.js" ></script>
+	
+	<style>
+		body{
+			font-family:verdana;
+		}
+		input{
+			width:180px;
+			margin-bottom:10px;
+		}
+		table td{
+			width:180px;
+			font-size:14px;
+			color:#58595B;
+		}
+		table thead td{
+			font-size:16px;
+			color:black;
+		}
+		table thead tr{
+			background-color:#C3C6C9;
+		}
+		.head{
+			width:180px;
+			float:left;
+			background-color:#C3C6C9;
+		}
+		.data_cell{
+			width:180px;
+			float:left;
+			font-size:14px;
+			color:#58595B;
+		}
+		.clear{
+			clear:both;
+		}
+		.divider{
+			height:90px;
+			padding:10px;
+			background-color:#BFCADD;
+			font-size:18px;
+			color:#313233;
+			margin-top:20px;
+			margin-bottom:20px;
+		}
+	</style>
+  </head>
+  <body>
+	<div class="divider">
+		Example 1: This is a simple table with the <i>stearch</i> added to an <i>onkeyup</i> event listener, the input field doesn't have an id
+	</div>
+    <input type="text" placeholder="search me" onkeyup="stearch('myTable', this)" />
+    <table id="myTable">
+      <thead>
+        <tr><td>Name</td><td>Gender</td><td>Age</td></tr>
+      </thead>
+      <tbody>
+        <tr class="searchable_row"><td>John Smith</td><td>male</td><td>21</td></tr>
+        <tr class="searchable_row"><td>Ben Hardey</td><td>male</td><td>25</td></tr>
+        <tr class="searchable_row"><td>Olivia Green</td><td>female</td><td>22</td></tr>
+        <tr class="searchable_row"><td>Sylvia Potter</td><td>female</td><td>32</td></tr>
+        <tr class="searchable_row"><td>Lara Dark</td><td>female</td><td>42</td></tr>
+      </tbody>
+    </table>
+	
+	<div class="divider">
+		Example 2: This is another simple table with the <i>stearch</i> added to an <i>onclick</i> event listener of the "search" button, the input field has an id
+	</div>
+	<input type="text" placeholder="search me" id="query_field" /><button onclick="stearch('myTable2', 'query_field')">search</button>
+    <table id="myTable2">
+      <thead>
+        <tr><td>Name</td><td>Gender</td><td>Age</td></tr>
+      </thead>
+      <tbody>
+        <tr class="searchable_row"><td>Greg Burrow</td><td>male</td><td>26</td></tr>
+        <tr class="searchable_row"><td>Smith Johnson</td><td>male</td><td>21</td></tr>
+        <tr class="searchable_row"><td>Petra Reece</td><td>female</td><td>32</td></tr>
+        <tr class="searchable_row"><td>Veronica Baker</td><td>female</td><td>26</td></tr>
+        <tr class="searchable_row"><td>Maria Vera</td><td>female</td><td>27</td></tr>
+      </tbody>
+    </table>
+	
+	<div class="divider">
+		Example 3: This is a <b>div</b> structure with the <i>stearch</i> added to an <i>onclick</i> event listener of the "search" button, the input search field has an id, the rows of the structure have a class 'row' wich can be passed to the <i>stearch</i> arguments so they become searchable. There is also a 'display' argument passed to the function, so the matching rows are rendered with "display:block" property.
+	</div>
+	<input type="text" placeholder="search me" id="search_employee" /><button onclick="stearch('employees', 'search_employee', 'row', 'block')">search</button>
+    <div id="employees">
+      <div>
+        <div class="head">Name</div><div class="head">Class</div><div class="head">Points</div>
+		<div class="clear"></div>
+      </div>
+      <div>
+        <div class="row"><div class="data_cell">Jumpy</div><div class="data_cell">dog</div><div class="data_cell">211</div><div class="clear"></div></div>
+        <div class="row"><div class="data_cell">Squeeky</div><div class="data_cell">cat</div><div class="data_cell">252</div><div class="clear"></div></div>
+        <div class="row"><div class="data_cell">Tom</div><div class="data_cell">cat</div><div class="data_cell">321</div><div class="clear"></div></div>
+        <div class="row"><div class="data_cell">Jerry</div><div class="data_cell">mouse</div><div class="data_cell">476</div><div class="clear"></div></div>
+        <div class="row"><div class="data_cell">Rex</div><div class="data_cell">dog</div><div class="data_cell">421</div><div class="clear"></div></div>
+        <div class="row"><div class="data_cell">Chewy</div><div class="data_cell">mouse</div><div class="data_cell">421</div><div class="clear"></div></div>
+        <div class="row"><div class="data_cell">Purry</div><div class="data_cell">cat</div><div class="data_cell">653</div><div class="clear"></div></div>
+      </div>
+    </div>
+  <body>
+</html>
