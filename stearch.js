@@ -1,18 +1,20 @@
-function searchTable(elementid, inputid, displaymode, classname){
+function stearch(elementid, inputid, classname, displaymode){
 	
 	if(typeof elementid === 'undefined'){
-		elementid = "#"+elementid;
-	}else{
 		alert('You need to provide the element id, this is the first argument');
+	}else{
+		elementid = "#"+elementid;
 	}
 	
-	if(typeof classname === 'undefined'){
-		query = $(this).val();
+	if(typeof inputid === 'undefined'){
+		alert('You need to provide the input id, this is the second argument, you can use "this" if you don\'t have an id ');
 	}else{
-		inputid = "#"+inputid;
+		if(typeof inputid == "string"){
+			inputid = "#"+inputid;
+		}
 		query = $(inputid).val();
 	}
-	
+
 	query = query.toLowerCase();
 	
 	if(typeof classname === 'undefined'){
@@ -22,10 +24,10 @@ function searchTable(elementid, inputid, displaymode, classname){
 	}
 	
 	if(typeof displaymode === 'undefined'){
-		displaymode = "block";
+		displaymode = "table-row";
 	}
 	
-	$(elementid).children(classname).each(function() {
+	$(elementid+' '+classname).each(function() {
 		var str = purifyText($(this).html());
 			result_multsearch = 0;
 			result_multsearch_check = 0;
@@ -44,7 +46,7 @@ function searchTable(elementid, inputid, displaymode, classname){
 			if(result_multsearch == result_multsearch_check){
 				$(this).css('display',displaymode);
 			}else{
-				$(this).css('display',displaymode);
+				$(this).css('display','none');
 			}
 	});
 }
