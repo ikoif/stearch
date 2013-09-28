@@ -4,8 +4,8 @@ stearch
 Funny name for - String Search.
 Javascript based DOM client search. A function which hides html elements (divs, table rows, table cells, spans) which do not match the string which is entered in a field. 
 
-Check this bin for demo:
-http://jsbin.com/uCUHejO/1/edit?html,output
+###<a href="http://jsbin.com/epUxOBo/1/edit?output">Check demo</a>
+
 
 ##Usage and implementation
 
